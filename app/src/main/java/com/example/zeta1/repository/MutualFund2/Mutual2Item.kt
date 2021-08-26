@@ -1,4 +1,5 @@
 package com.example.zeta1.repository.MutualFund2
+var deftype= "Growth"
 val listofItems = mutableListOf<Mutual2Item>()
 data class Mutual2Item(
     val Fund_house: String="",
@@ -11,3 +12,6 @@ data class Mutual2Item(
     val Scheme_code: Int=0,
     val Scheme_name: String=""
 )
+{
+    var navaslist = mutableListOf<String>()
+}

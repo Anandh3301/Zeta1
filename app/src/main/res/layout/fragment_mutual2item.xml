@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="140dp"
     android:layout_marginTop="4dp"
     android:orientation="horizontal"
 
@@ -13,49 +13,56 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/detailB"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:backgroundTintMode="screen"
+            android:gravity="center"
+            android:text="details"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/date"
+            app:layout_constraintStart_toEndOf="@+id/date" />
+
         <TextView
             android:id="@+id/date"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
+
+            android:layout_marginBottom="8dp"
 
             android:text="date"
-
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/percent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameT" />
+            app:layout_constraintBottom_toTopOf="@+id/price"
+            app:layout_constraintStart_toStartOf="@+id/nameT" />
 
         <TextView
             android:id="@+id/percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
 
             android:layout_marginBottom="4dp"
             android:gravity="center_horizontal"
 
             android:text="%"
             android:textAlignment="center"
-            android:textSize="30sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/price"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/price"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="4dp"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
 
             android:gravity="start"
             android:text="Price"
@@ -64,9 +71,7 @@
             android:textSize="14sp"
             android:textStyle="bold|italic"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date" />
+            app:layout_constraintStart_toStartOf="@+id/date" />
 
         <TextView
             android:id="@+id/nameT"
@@ -81,9 +86,30 @@
             android:text="Name"
 
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toStartOf="@+id/percent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FUND HOUSE"
+            app:layout_constraintBottom_toTopOf="@+id/date"
+            app:layout_constraintStart_toStartOf="@+id/date"
+            app:layout_constraintTop_toBottomOf="@+id/nameT" />
+
+        <TextView
+            android:id="@+id/growth_div_idcw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="type"
+            app:layout_constraintBottom_toTopOf="@+id/detailB"
+            app:layout_constraintEnd_toEndOf="@+id/percent"
+            app:layout_constraintHorizontal_bias="0.342"
+            app:layout_constraintStart_toEndOf="@+id/house"
+            app:layout_constraintTop_toTopOf="@+id/house"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

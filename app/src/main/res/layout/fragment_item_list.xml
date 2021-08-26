@@ -1,13 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
-    android:name="com.example.zeta1.MutualItemFragment"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    app:layoutManager="LinearLayoutManager"
-    tools:context=".MutualItemFragment"
-    tools:listitem="@layout/fragment_mutual2item" />
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MutualItemFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerlist"
+        android:layout_width="match_parent"
+
+        app:layoutManager="LinearLayoutManager"
+        android:layout_height="600dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/fragment_mutual2item" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioGrowth"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+
+            android:text="  Growth"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/radioIDCW"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+
+            android:text="  IDCW"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/radioDIV"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+
+            android:text="   DIV"
+
+            android:textSize="20dp" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>
