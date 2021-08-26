@@ -8,17 +8,20 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.zeta1.repository.MutualFund2.deftype
 import com.example.zeta1.repository.getMutual
 import kotlinx.android.synthetic.main.activity_main.*
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa
+// 01:19
 val MY_PREFS_NAME = "TYPE"
 var type = "Growth"
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getMutual("Growth"){
+
+        }
         Log.d("main", "main")
 
     }
-
+/*
     fun GROWTH(view: View) {
         Toast.makeText(this, "showing growth", Toast.LENGTH_LONG).show()
         deftype="Growth"
@@ -45,6 +48,6 @@ class MainActivity : AppCompatActivity() {
         recreate()
     }
 
-
+*/
 
 }

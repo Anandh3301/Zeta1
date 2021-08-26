@@ -48,7 +48,7 @@ fun getMutual(type: String, callbackfun: (List<Mutual2Item>) -> (Unit)) {
 
                     }
                 }*/
-                if (isgrowth.equals(type)) {
+
                       Log.d("istype","added :::: ${type}")
 
                     val stuff = snapshot.getValue(Mutual2Item::class.java)
@@ -61,7 +61,7 @@ fun getMutual(type: String, callbackfun: (List<Mutual2Item>) -> (Unit)) {
 
                     }
 
-                }
+
                 /*  snapshot.children.forEach {
                     Log.d("plswork", it.toString())
                     Log.d("mutual", it.toString())

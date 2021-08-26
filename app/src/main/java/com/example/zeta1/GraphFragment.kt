@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.zeta1.repository.parseNAV
 import com.github.mikephil.charting.data.Entry
@@ -25,6 +26,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class GraphFragment : Fragment() {
+
     private var x: MutableList<String>? = null
 
     // TODO: Rename and change types of parameters
@@ -57,25 +59,61 @@ class GraphFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+    //    Log.d("porsed",x.toString())
+        setGraphData(14)
+      /*  go.setOnClickListener {
+            var option =  spinner.selectedItem.toString()
+            Toast.makeText(context,option,Toast.LENGTH_LONG).show()
+            when (option)
+            {
+                "7 days" -> {
+                    lineChart.clearValues()
+                    setGraphData(7)
+
+                }
+                "14 days"->{
+                    lineChart.clearValues()
+                    setGraphData(14)
+                }
+                "21 days"->{
+                    lineChart.clearValues()
+                    setGraphData(21)
+                }
+                "28 days"->{
+                    lineChart.clearValues()
+                    setGraphData(28)
+                }
+            }
+
+        }*/
+
+
+    }
+    fun setGraphData(num : Int)
+    {
         Log.d("porsed",x.toString())
         x?.reverse()
 
-        for (i in (x!!.size-10)..x!!.size-1)
+        for (i in (x!!.size-num)..x!!.size-1)
         { val num=  x!![i].split('@')[1].toFloat()
             entryList.add(Entry(i.toFloat(), num))
         }
-        val lineDataSet = LineDataSet(entryList, "country")
+       var   lineDataSet = LineDataSet(entryList, "NAV data")
         lineDataSet.setColors(*ColorTemplate.JOYFUL_COLORS)
         lineDataSet.fillAlpha = 110
         lineData = LineData(lineDataSet)
         lineChart.setData(lineData)
         lineChart.setVisibleXRangeMaximum(10F)
         lineChart.invalidate()
-
     }
 
     companion object {
         /**
+         *
+         *  chart.setData(...); // sets data & also calls notifyDataSetChanged()
+        chart.invalidate(); // ref
+
+
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
