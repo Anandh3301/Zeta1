@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.zeta1.repository.MutualFund2.deftype
 import com.example.zeta1.repository.getMutual
 import kotlinx.android.synthetic.main.activity_main.*
-
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa
 val MY_PREFS_NAME = "TYPE"
 var type = "Growth"
 class MainActivity : AppCompatActivity() {
